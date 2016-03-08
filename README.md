@@ -1,2 +1,2 @@
-proof of concept for basic animation using mithril and tween
+Mithril Demo for "Small Footprint JavaScript" lightning talk @ NEDev
 
