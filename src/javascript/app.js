@@ -1,20 +1,35 @@
 var m = require('mithril');
 var target = document.getElementById('container');
 
-var firstName = m.prop('Stephen');
+// Define the Greeter Component
+var greeter = {};
 
-var view = m('div.greeter', [
-  m('label', 'Enter your name'),
-  m('input', {
-    value: firstName(),
-    oninput: m.withAttr('value', firstName)
-  }),
-  m('div', 'Hello ' + firstName() + '!'),
-  m('button', { onclick: showNameValue }, 'Show Current Value')
-]);
+greeter.controller = function() {
+    // responsibility: make service requests and
+    // initialize the view model
+    greeter.vm.init('Stephen');
+};
 
-m.render(target, view);
+greeter.vm = {
+  init: function(firstName) {
+    greeter.vm.firstName(firstName);
+  },
+  firstName: m.prop()
+};
 
-function showNameValue() {
-  alert('Current value of firstName: ' + firstName());
-}
+greeter.view = function() {
+    var vm = greeter.vm;
+
+    var view = m('div.greeter', [
+        m('label', 'Enter your name'),
+        m('input', {
+            value: vm.firstName(),
+            oninput: m.withAttr('value', vm.firstName)
+        }),
+        m('div', 'Hello ' + vm.firstName() + '!')
+    ]);
+
+    return view;
+};
+
+m.mount(target, greeter);
