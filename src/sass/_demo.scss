@@ -29,12 +29,22 @@ h1 {
     opacity: 0.5;
 }
 
-// Use basic column layout aligning along center line for Greeter demo
-.greeter {
+// Use basic column layout aligning along center line for Greeter and Index demo
+.greeter, .index {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-content: stretch;
     align-items: center;
+}
+
+.index {
+  ul {
+    list-style: none;
+
+    a {
+      font-size: 30px;
+    }
+  }
 }

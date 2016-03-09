@@ -1,35 +1,12 @@
 var m = require('mithril');
 var target = document.getElementById('container');
 
-// Define the Greeter Component
-var greeter = {};
+var greeter = require('./components/greeter');
+var index = require('./components/index');
 
-greeter.controller = function() {
-    // responsibility: make service requests and
-    // initialize the view model
-    greeter.vm.init('Stephen');
-};
+m.route.mode = 'hash';
 
-greeter.vm = {
-  init: function(firstName) {
-    greeter.vm.firstName(firstName);
-  },
-  firstName: m.prop()
-};
-
-greeter.view = function() {
-    var vm = greeter.vm;
-
-    var view = m('div.greeter', [
-        m('label', 'Enter your name'),
-        m('input', {
-            value: vm.firstName(),
-            oninput: m.withAttr('value', vm.firstName)
-        }),
-        m('div', 'Hello ' + vm.firstName() + '!')
-    ]);
-
-    return view;
-};
-
-m.mount(target, greeter);
+m.route(target, '/index', {
+  '/index': index,
+  '/greeter': greeter
+});
