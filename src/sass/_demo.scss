@@ -4,33 +4,30 @@ body {
     background-color: #b3e5fc;
     font-size: 30px !important;
     line-height: 30px;
-
-    input, button, div {
+    input,
+    button,
+    div {
         font-size: 30px !important;
         margin: 10px;
     }
-
     label.mdl-textfield__label {
-      font-size: 18px;
+        font-size: 18px;
     }
-
     button {
         height: 50px !important;
     }
 }
-
 h1 {
     text-align: center;
 }
-
 #__bs_notify__ {
     font-size: 15px !important;
     line-height: 20px !important;
     opacity: 0.5;
 }
-
 // Use basic column layout aligning along center line for Greeter and Index demo
-.greeter, .index {
+.greeter,
+.index {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -38,13 +35,27 @@ h1 {
     align-content: stretch;
     align-items: center;
 }
-
 .index {
-  ul {
-    list-style: none;
-
-    a {
-      font-size: 30px;
+    ul {
+        list-style: none;
+        a {
+            font-size: 30px;
+        }
     }
-  }
+}
+.realtime {
+    svg {
+        font: 10px sans-serif;
+    }
+    .line {
+        fill: none;
+        stroke: #000;
+        stroke-width: 1.5px;
+    }
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
 }

@@ -8,6 +8,10 @@ index.controller = function() {
     {
       route: '#/greeter',
       displayName: 'Greeter'
+    },
+    {
+      route: '#/realtime',
+      displayName: 'Real-time data demo'
     }
   ];
 
@@ -32,7 +36,7 @@ index.view = function() {
       }, link.displayName));
     }))
   );
-  
+
   return view;
 };
 
