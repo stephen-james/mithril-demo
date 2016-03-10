@@ -4,11 +4,13 @@ var target = document.getElementById('container');
 var greeter = require('./components/greeter');
 var index = require('./components/index');
 var realtime = require('./components/realtime-data');
+var playerOne = require('./components/player-one');
 
 m.route.mode = 'hash';
 
 m.route(target, '/index', {
   '/index': index,
   '/greeter': greeter,
-  '/realtime': realtime
+  '/realtime': realtime,
+  '/player-one': playerOne
 });

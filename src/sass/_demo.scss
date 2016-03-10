@@ -1,6 +1,5 @@
 // DEMO RESETS - make stuff more legible
 body {
-    padding: 20px;
     background-color: #b3e5fc;
     font-size: 30px !important;
     line-height: 30px;
@@ -25,6 +24,8 @@ h1 {
     line-height: 20px !important;
     opacity: 0.5;
 }
+
+// "Greeter" and routing demo
 // Use basic column layout aligning along center line for Greeter and Index demo
 .greeter,
 .index {
@@ -43,6 +44,8 @@ h1 {
         }
     }
 }
+
+// "Realtime Data" demo
 .realtime {
     svg {
         font: 10px sans-serif;
@@ -57,5 +60,100 @@ h1 {
         fill: none;
         stroke: #000;
         shape-rendering: crispEdges;
+    }
+}
+
+// "Player One" Demo
+@keyframes animateNinjaIdle {
+    100% {
+        // see:  http://blog.teamtreehouse.com/css-sprite-sheet-animations-steps
+        background-position: -2320px;
+    }
+}
+@keyframes animateNinjaRun {
+    100% {
+        // see:  http://blog.teamtreehouse.com/css-sprite-sheet-animations-steps
+        background-position: -3630px;
+    }
+}
+@keyframes animateNinjaSlide {
+    100% {
+        // see:  http://blog.teamtreehouse.com/css-sprite-sheet-animations-steps
+        background-position: -3750px;
+    }
+}
+@keyframes animateNinjaJump {
+    100% {
+        // see:  http://blog.teamtreehouse.com/css-sprite-sheet-animations-steps
+        background-position: -3620px;
+    }
+}
+.player-one {
+    margin: 0 auto;
+    &.idle {
+        // see:  http://blog.teamtreehouse.com/css-sprite-sheet-animations-steps
+        width: 232px;
+        height: 439px;
+        margin-top: 458px - 439px;
+        background: url('images/ninja-spritesheet-idle.png') left center;
+        animation: animateNinjaIdle 0.8s steps(10) infinite;
+    }
+    &.run {
+        // see:  http://blog.teamtreehouse.com/css-sprite-sheet-animations-steps
+        width: 363px;
+        height: 458px;
+        background: url('images/ninja-spritesheet-run.png') left center;
+        animation: animateNinjaRun 0.8s steps(10) infinite;
+    }
+    &.slide {
+        // see:  http://blog.teamtreehouse.com/css-sprite-sheet-animations-steps
+        width: 373px;
+        height: 351px;
+        margin-top: 458px - 351px;
+        background: url('images/ninja-spritesheet-slide.png') left center;
+        animation: animateNinjaSlide 0.8s steps(10) infinite;
+    }
+    &.jump {
+        width: 362px;
+        height: 483px;
+        background: url('images/ninja-spritesheet-jump.png') left center;
+        animation: animateNinjaJump 0.8s steps(10) infinite;
+    }
+}
+.keys {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+}
+.key {
+    border: solid 1px darkgray;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+
+    &.active {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: black;
+        box-shadow: 0px 0px 5px yellow;
+    }
+    &.key-left {
+        &:before {
+            content: 'left';
+        }
+    }
+    &.key-up {
+        &:before {
+            content: 'up';
+        }
+    }
+    &.key-right {
+        &:before {
+            content: 'right';
+        }
     }
 }
