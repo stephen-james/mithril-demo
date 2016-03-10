@@ -38,8 +38,8 @@ playerOne.vm = {
   ninjaState: function() {
     var vm = playerOne.vm;
 
-    // TODO!!  REMOVE FOR DEMO!!
-    return 'short-circuit';
+    // // TODO!!  REMOVE FOR DEMO!!
+    // return 'short-circuit';
 
     var left = vm.keys.left();
     var up = vm.keys.up();
