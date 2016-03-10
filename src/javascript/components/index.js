@@ -12,6 +12,10 @@ index.controller = function() {
     {
       route: '#/realtime',
       displayName: 'Real-time data demo'
+    },
+    {
+      route: '#/player-one',
+      displayName: 'Player One (game start)'
     }
   ];
 
