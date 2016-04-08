@@ -16,7 +16,12 @@ index.controller = function() {
     {
       route: '#/player-one',
       displayName: 'Player One (game start)'
+    },
+    {
+      route: '#/repeater',
+      displayName: 'Repeater with map (keyed to ensure good diff)'
     }
+
   ];
 
   index.vm.init(links);
